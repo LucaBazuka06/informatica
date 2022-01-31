@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliccati la vita!</title>
+<style>
+    #bigTimer{
+
+        font-size: 50px;
+        text-align: center;
+        color: rgba(14, 121,  106,  0.438);
+
+    }
+</style>
+
+</head>
+<body>
+    <p>clicca quante volte puoi in un tempo di 13  secondi</p>
+    <p id="bigTimer" ></p>
+
+    <p id="output2"></p>
+   
+
+
+
+<button onclick="StartGame()">Start</button>
+<script>
+   
+
+    let tempo=5;
+    setInterval(countDown,1000);
+    let start=Date.now();
+    function getTempo() {
+        return tempo;
+       
+    }
+    function StartGame()
+    {
+    let miotempo;
+     miotempo=(Date.now()-start)+"ms ";
+
+document.getElementById('output2').innerHTML+=miotempo;
+
+    }
+
+
+function countDown() {
+   
+
+       
+        document.getElementById('bigTimer').innerHTML = tempo.toString() + '  ';
+       
+        if(tempo == 0) {
+           clearInterval(interval);
+           
+        }
+        tempo--;
+}
+
+</script>
+</body>
+</html>
